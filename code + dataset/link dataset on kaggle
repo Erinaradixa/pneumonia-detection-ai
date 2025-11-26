@@ -1,13 +1,16 @@
 ini dataset dari kaggle, tim kami mengambil dataset X-Ray bagian dada dengan pasien yang memiliki pneumonia dan normal. kami membagi dataset menjadi Train, Validasi, Tes. total data yang kita pakai adalah 5840 gambar X-Ray.
 dengan total data latih 4173, data validasi 1043, data test 624.
 
-**Table 1.** Distribusi Dataset Citra Radiografi Dada
-
+I. Distribusi Dataset Citra Radiografi Dada
 | Kategori | Data Latih | Data Validasi | Data Uji | Total |
-| :--- | :---: | :---: | :---: | :---: |
-| Normal | 1.267 | 335 | 234 | 1.836 |
-| Pneumonia | 2.906 | 708 | 390 | 4.004 |
-| **Total** | **4.173** | **1.043** | **624** | **5.840** |
+| :------- | :--------: | :-----------: | :------: | :---: |
+| Normal   | 1.267      | 335           | 234      | 1.836 |
+| Pneumonia| 2.906      | 708           | 390      | 4.004 |
+| Total    | 4.173      | 1.043         | 624      | 5.840 |
 
+Dataset yang digunakan dalam proyek ini adalah Chest X-Ray Images (Pneumonia) yang bersumber dari Kaggle. Dataset ini terdiri dari total 5.863 citra radiografi dada dalam format JPEG.
+Fokus utama dari dataset ini adalah klasifikasi biner (Binary Classification) untuk mengidentifikasi kondisi paru-paru, yaitu kategori Normal dan Pneumonia. 
+serta memiliki karakteristik distribusi data yang tidak seimbang (imbalanced dataset).
 
-https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data
+https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data <-- ini linknya
+================================================================================================================================================================================================================================
