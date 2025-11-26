@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Analisis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            min-height: 100vh; padding: 20px; 
+        }
+        .container { 
+            max-width: 700px; margin: 0 auto; background: white; 
+            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            overflow: hidden; 
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 25px 20px; text-align: center; 
+        }
+        .header h1 { font-size: 1.8em; margin-bottom: 5px; }
+        .content { padding: 30px; }
+        .result-card { 
+            padding: 25px; margin: 20px 0; border-radius: 10px; 
+            text-align: center; 
+        }
+        .pneumonia { background: #ffeaa7; border-left: 5px solid #e74c3c; }
+        .normal { background: #d4edda; border-left: 5px solid #27ae60; }
+        .prediction { font-size: 1.8em; font-weight: bold; margin: 15px 0; }
+        .confidence { font-size: 1.2em; margin: 10px 0; color: #555; }
+        .risk-badge { 
+            display: inline-block; padding: 8px 16px; margin: 10px 0; 
+            border-radius: 20px; font-weight: bold; color: white; 
+        }
+        .risk-high { background: #e74c3c; }
+        .risk-medium { background: #f39c12; }
+        .risk-low { background: #27ae60; }
+        .recommendation { 
+            background: #e8f4fd; padding: 15px; border-radius: 8px; 
+            margin: 15px 0; border-left: 4px solid #3498db; 
+        }
+        .actions { text-align: center; margin: 25px 0; }
+        .btn { 
+            display: inline-block; padding: 12px 24px; margin: 0 10px; 
+            background: #667eea; color: white; text-decoration: none; 
+            border-radius: 25px; transition: all 0.3s ease; 
+        }
+        .btn:hover { background: #5a67d8; transform: translateY(-2px); }
+        .disclaimer { 
+            background: #fff3cd; border: 1px solid #ffeaa7; 
+            border-radius: 8px; padding: 15px; margin-top: 20px; 
+            font-size: 0.9em; color: #856404; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Hasil Analisis X-Ray</h1>
+            <p>Deteksi Pneumonia dengan AI</p>
+        </div>
+        
+        <div class="content">
+            <div class="result-card {% if prediction == 'PNEUMONIA' %}pneumonia{% else %}normal{% endif %}">
+                <h2>Hasil Prediksi</h2>
+                
+                <div class="prediction">
+                    {% if prediction == 'PNEUMONIA' %}
+                        ⚠️ TERDETEKSI PNEUMONIA
+                    {% else %}
+                        ✅ HASIL NORMAL
+                    {% endif %}
+                </div>
+                
+                <div class="confidence">
+                    Tingkat Kepercayaan: <strong>{{ "%.2f"|format(confidence) }}%</strong>
+                </div>
+                
+                <div class="risk-badge 
+                    {% if risk_level == 'TINGGI' %}risk-high
+                    {% elif risk_level == 'SEDANG' %}risk-medium
+                    {% else %}risk-low{% endif %}">
+                    {% if risk_level == 'TINGGI' %}
+                        🚩 RISIKO TINGGI
+                    {% elif risk_level == 'SEDANG' %}
+                        ⚠️ RISIKO SEDANG
+                    {% else %}
+                        ✅ RISIKO RENDAH
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="recommendation">
+                <h3>💡 Rekomendasi:</h3>
+                <p>{{ recommendation }}</p>
+            </div>
+            
+            <div class="actions">
+                <a href="/" class="btn">🔄 Analisis Gambar Lain</a>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>⚠️ Penting:</strong> Hasil analisis ini merupakan bantuan diagnosis 
+                berbasis AI dan tidak menggantikan konsultasi dengan dokter spesialis. 
+                Selalu konsultasikan hasil dengan profesional medis.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

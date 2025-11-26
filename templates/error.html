@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Pneumonia Detector</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            min-height: 100vh; padding: 20px; 
+        }
+        .container { 
+            max-width: 600px; margin: 0 auto; background: white; 
+            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            overflow: hidden; 
+        }
+        .header { 
+            background: #e74c3c; color: white; padding: 25px 20px; text-align: center; 
+        }
+        .content { padding: 30px; text-align: center; }
+        .error-icon { font-size: 4em; margin-bottom: 20px; }
+        .btn { 
+            display: inline-block; padding: 12px 24px; margin: 20px 10px; 
+            background: #667eea; color: white; text-decoration: none; 
+            border-radius: 25px; transition: all 0.3s ease; 
+        }
+        .btn:hover { background: #5a67d8; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>❌ Terjadi Error</h1>
+        </div>
+        
+        <div class="content">
+            <div class="error-icon">⚠️</div>
+            <h2>{{ message }}</h2>
+            <p>Silakan coba lagi atau hubungi administrator.</p>
+            
+            <a href="/" class="btn">🔄 Kembali ke Home</a>
+        </div>
+    </div>
+</body>
+</html>

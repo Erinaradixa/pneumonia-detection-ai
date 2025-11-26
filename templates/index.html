@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Pneumonia - AI System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            min-height: 100vh; padding: 20px; 
+        }
+        .container { 
+            max-width: 600px; margin: 0 auto; background: white; 
+            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            overflow: hidden; 
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; padding: 30px 20px; text-align: center; 
+        }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .content { padding: 30px; }
+        .upload-area { 
+            border: 3px dashed #667eea; border-radius: 10px; 
+            padding: 40px 20px; text-align: center; margin: 20px 0; 
+            cursor: pointer; transition: all 0.3s ease; 
+        }
+        .upload-area:hover { background: #f8f9ff; border-color: #5a67d8; }
+        .upload-icon { font-size: 3em; color: #667eea; margin-bottom: 15px; }
+        .file-input { display: none; }
+        .upload-btn { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; border: none; padding: 12px 25px; 
+            border-radius: 25px; font-size: 1em; cursor: pointer; 
+            transition: transform 0.2s ease; margin-top: 15px;
+        }
+        .upload-btn:hover { transform: translateY(-2px); }
+        .file-info { margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; }
+        .disclaimer { 
+            background: #fff3cd; border: 1px solid #ffeaa7; 
+            border-radius: 8px; padding: 15px; margin-top: 20px; 
+            font-size: 0.9em; color: #856404; 
+        }
+        .loading { display: none; text-align: center; margin: 20px 0; }
+        .spinner { 
+            border: 4px solid #f3f3f3; border-top: 4px solid #667eea; 
+            border-radius: 50%; width: 40px; height: 40px; 
+            animation: spin 1s linear infinite; margin: 0 auto 10px; 
+        }
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Pneumonia AI Detector</h1>
+            <p>Analisis X-Ray dengan Artificial Intelligence</p>
+        </div>
+        
+        <div class="content">
+            <form id="uploadForm" action="/predict" method="post" enctype="multipart/form-data">
+                <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-icon">📁</div>
+                    <h3>Upload Gambar X-Ray</h3>
+                    <p>Klik untuk memilih file (JPG, PNG, JPEG)</p>
+                    <input type="file" id="fileInput" name="file" class="file-input" 
+                           accept=".png,.jpg,.jpeg" onchange="handleFileSelect(this)">
+                </div>
+                
+                <div id="fileInfo" class="file-info" style="display: none;">
+                    <strong>File terpilih:</strong> <span id="fileName"></span>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Sedang menganalisis gambar...</p>
+                </div>
+                
+                <button type="submit" class="upload-btn" id="submitBtn" style="display: none;">
+                    🔍 Analisis Sekarang
+                </button>
+            </form>
+            
+            <div class="disclaimer">
+                <strong>⚠️ Disclaimer Medis:</strong> Hasil ini merupakan bantuan diagnosis AI 
+                dan tidak menggantikan konsultasi dengan dokter profesional.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                document.getElementById('fileName').textContent = file.name;
+                document.getElementById('fileInfo').style.display = 'block';
+                document.getElementById('submitBtn').style.display = 'block';
+            }
+        }
+        
+        document.getElementById('uploadForm').addEventListener('submit', function() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('submitBtn').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
