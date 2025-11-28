@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error - Pneumonia Detector</title>
+    <title>Oops! Error</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-            min-height: 100vh; padding: 20px; 
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: #fff;
         }
-        .container { 
-            max-width: 600px; margin: 0 auto; background: white; 
-            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
-            overflow: hidden; 
+        .glass-box {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 500px;
         }
-        .header { 
-            background: #e74c3c; color: white; padding: 25px 20px; text-align: center; 
+        h1 { font-family: 'Fredoka One'; font-size: 3em; margin: 0; text-shadow: 2px 2px 0px rgba(0,0,0,0.1); }
+        .icon { font-size: 80px; margin-bottom: 20px; display: block; animation: shake 0.5s; }
+        .btn {
+            background: white; color: #ff9a9e; padding: 15px 30px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold;
+            display: inline-block; margin-top: 20px; transition: 0.3s;
         }
-        .content { padding: 30px; text-align: center; }
-        .error-icon { font-size: 4em; margin-bottom: 20px; }
-        .btn { 
-            display: inline-block; padding: 12px 24px; margin: 20px 10px; 
-            background: #667eea; color: white; text-decoration: none; 
-            border-radius: 25px; transition: all 0.3s ease; 
-        }
-        .btn:hover { background: #5a67d8; transform: translateY(-2px); }
+        .btn:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } 100% { transform: translateX(0); } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>❌ Terjadi Error</h1>
-        </div>
-        
-        <div class="content">
-            <div class="error-icon">⚠️</div>
-            <h2>{{ message }}</h2>
-            <p>Silakan coba lagi atau hubungi administrator.</p>
-            
-            <a href="/" class="btn">🔄 Kembali ke Home</a>
-        </div>
+    <div class="glass-box">
+        <span class="icon">😿</span>
+        <h1>Oopsie!</h1>
+        <!-- HANYA BOLEH ADA {{ message }} DISINI, JANGAN ADA {{ filename }} -->
+        <h3 style="background: rgba(255,0,0,0.1); padding: 10px; border-radius: 10px;">
+            {{ message }}
+        </h3>
+        <p>Model AI belum terdeteksi atau terjadi kesalahan sistem.</p>
+        <a href="/" class="btn">🔙 Kembali ke Home</a>
     </div>
 </body>
 </html>

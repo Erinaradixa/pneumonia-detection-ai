@@ -74,7 +74,7 @@ def preprocess_image(image_path):
         print(f"📊 Array shape before preprocessing: {img_array.shape}")
         
         # Preprocess untuk EfficientNet
-        img_array = preprocess_input(img_array)
+        # img_array = preprocess_input(img_array)
         print(f"✅ Preprocessing complete")
         
         return img_array
