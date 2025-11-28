@@ -12,13 +12,15 @@ Cara Install dan Jalankan:
 
 File Structure:
 - code + dataset/    -> code model & dataset, pipeline work model
-- app.py              -> Main application
-- requirements.txt    -> Python dependencies  
-- run.bat            -> Windows runner
-- run.sh             -> Mac/Linux runner
 - model/             -> model_EFFICIENTNET_final.keras -> AI Model
-- templates/          -> HTML templates
-- static/uploads/     -> Upload folder
+- output             -> paper
+- sample_data_test   -> image for test the project
+- templates/          -> HTML templates 
+- app.py              -> Main application
+- requirements.txt    -> Python dependencies 
+- run.bat            -> Windows runner
+
+
 
 System Requirements:
 - Python 3.8+
