@@ -25,4 +25,4 @@ System Requirements:
 - 4GB RAM minimum
 - Windows/Mac/Linux
 
-Note: Aplikasi ini untuk bantuan diagnosis, konsultasi dokter tetap diperlukan.
+Note: web ini untuk bantuan diagnosis, konsultasi dokter tetap diperlukan.
