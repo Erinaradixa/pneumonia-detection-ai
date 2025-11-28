@@ -12,5 +12,6 @@ Dataset yang digunakan dalam proyek ini adalah Chest X-Ray Images (Pneumonia) ya
 Fokus utama dari dataset ini adalah klasifikasi biner (Binary Classification) untuk mengidentifikasi kondisi paru-paru, yaitu kategori Normal dan Pneumonia. 
 serta memiliki karakteristik distribusi data yang tidak seimbang (imbalanced dataset).
 
-https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data <-- ini linknya
+https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data <-- ini link dataset yang dipakai
+https://www.kaggle.com/code/paijolemu/code-model-efficientnet <-- ini link code yang ada di kaggle
 ================================================================================================================================================================================================================================
