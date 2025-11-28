@@ -11,11 +11,12 @@ Cara Install dan Jalankan:
 6. Buka http://localhost:5000 di browser
 
 File Structure:
+- code + dataset/    -> code model & dataset, pipeline work model
 - app.py              -> Main application
 - requirements.txt    -> Python dependencies  
 - run.bat            -> Windows runner
 - run.sh             -> Mac/Linux runner
-- model_EFFICIENTNET_final.keras -> AI Model
+- model/             -> model_EFFICIENTNET_final.keras -> AI Model
 - templates/          -> HTML templates
 - static/uploads/     -> Upload folder
 
